@@ -5,15 +5,16 @@
     android:id="@+id/rl"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+    
     
     <LinearLayout
 		    android:id="@+id/infoLayout"
 		    android:layout_width="wrap_content"
 		    android:layout_height="match_parent"
 		    android:layout_weight="15"
+		    android:paddingLeft="10dp"
 		    android:layout_alignParentRight="true"
-		   
+		    
 		    android:orientation="vertical" >
 
 			<TextView
@@ -21,6 +22,9 @@
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
 			    android:layout_marginTop="20dp"
+			    android:textStyle="bold"
+			    android:textSize="20sp"
+			    android:textColor="#FF0000"
 			    android:text="Ilosc wierzchołków: " />
 			
 			<TextView
@@ -28,6 +32,9 @@
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
 			    android:layout_marginTop="20dp"
+			    android:textStyle="bold"
+			    android:textSize="20sp"
+			    android:textColor="#FF0000"
 			    android:text="Ilosc krawędzi: " />
 		    
 		</LinearLayout>
@@ -36,58 +43,172 @@
         android:id="@+id/lin"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:weightSum="100">
+        android:layout_toLeftOf="@+id/wysowanyLayout"
+        android:orientation="horizontal" >
         
-   
+	<RelativeLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_marginTop="10dp"
+	    android:layout_marginLeft="10dp">
+        <AbsoluteLayout
+		    android:id="@+id/ll"
+		    android:layout_width="wrap_content"
+		    android:layout_height="match_parent"
+		  >
+		    
+            </AbsoluteLayout>
+		    
 	    <AbsoluteLayout
 		    android:id="@+id/Absolut"
 		    android:layout_width="wrap_content"
 		    android:layout_height="match_parent"
-		    android:layout_weight="75">
+		    >
+		    </AbsoluteLayout>
+
+	       </RelativeLayout>
 
 
-	
-		</AbsoluteLayout>
 		
-		<LinearLayout
-		    android:id="@+id/wysowanyLayout"
-		    android:layout_width="wrap_content"
-		    android:layout_height="match_parent"
-		    android:layout_weight="25"
-		    android:visibility="invisible"
-		    android:background="#FF00FF"
-		    android:orientation="vertical" >
+		
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/wysowanyLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignLeft="@+id/infoLayout"
+        
+        android:layout_alignParentRight="true"
+        android:background="@drawable/rightlayout"
+        android:orientation="vertical" >
 
 			<Button
 			    android:id="@+id/wczytajGrafBTN"
-			    android:layout_width="wrap_content"
+			    android:layout_width="match_parent"
 			    android:layout_height="wrap_content"
+			    android:layout_marginLeft="20dp"
+			    android:layout_marginRight="20dp"
+			    android:layout_marginTop="30dp"
+			    android:background="@drawable/button_home"
 			    android:onClick="wczytajGrafClick"
+			    android:textSize="20sp"
+			    android:textColor="#88775d" 
 			    android:text="Wczytaj Graf" />
 
 			<Button
 			    android:id="@+id/CustomizeBTN"
-			    android:layout_width="wrap_content"
+			    android:layout_width="match_parent"
 			    android:layout_height="wrap_content"
+			    android:layout_marginLeft="20dp"
+			    android:layout_marginRight="20dp"
+			    android:background="@drawable/button_home"
 			    android:onClick="customizeClick"
+			    android:textSize="20sp"
+			    android:textColor="#88775d" 
 			    android:text="Customize" />
 
+			<Button
+			    android:id="@+id/ZapiszGrafBTN"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_marginLeft="20dp"
+			    android:layout_marginRight="20dp"
+			    android:background="@drawable/button_home"
+			    android:onClick="ZapiszGrafClick"
+			    android:textSize="20sp"
+			    android:textColor="#88775d" 
+			    android:text="Zapisz Graf" />
+			
+			<Button
+			    android:id="@+id/ClearAllBTN"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_marginLeft="20dp"
+			    android:layout_marginRight="20dp"
+			    android:background="@drawable/button_home"
+			    android:onClick="ClearAllClick"
+			    android:textSize="20sp"
+			    android:textColor="#88775d" 
+			    android:text="Clear" />
 			<LinearLayout 
 			    android:id="@+id/llTmp"
 			    android:layout_width="match_parent"
 			    android:layout_height="match_parent"
+			    android:orientation="vertical"
+			    android:layout_marginLeft="20dp"
+			    android:layout_marginBottom="30dp"
+			    android:layout_marginRight="20dp"
 			    android:gravity="bottom">
-				<Button
-				    android:id="@+id/SzukajNajlepszejSciezkiBTN"
+	    
+			    <Button
+				    android:id="@+id/wczytaj"
+				    android:layout_width="match_parent"
+				    android:layout_height="wrap_content"
+				    android:background="@drawable/button_home"
+				    android:onClick="wczytajClick"
+				    android:paddingLeft="10dp"
+				    android:paddingRight="10dp"
+				    android:textSize="20sp"
+				    android:textColor="#88775d" 
+				    android:text="Wczytaj" />
+			    
+			    <LinearLayout
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:background="@drawable/button_home" >
+
+				<CheckBox
+				    android:id="@+id/Przesowanie"
 				    android:layout_width="wrap_content"
 				    android:layout_height="wrap_content"
+				    android:textSize="20sp" 
+				    android:textColor="#88775d" 
+				    
+				    android:text="Move" />
+			    </LinearLayout>
+			    <LinearLayout
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:background="@drawable/button_home" >
+
+				<CheckBox
+				    android:id="@+id/Rysowanie"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:textSize="20sp"
+				    android:textColor="#88775d" 
+				    android:text="Rysowanie" />
+				</LinearLayout>
+
+			    <LinearLayout
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:background="@drawable/button_home" >
+
+				<CheckBox
+				    android:id="@+id/pokazSiatke"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:textSize="20sp"
+				    android:textColor="#88775d" 
+				    android:checked="true"
+				    android:text="Ukryj siatke" />
+				</LinearLayout>
+
+				<Button
+				    android:id="@+id/SzukajNajlepszejSciezkiBTN"
+				    android:layout_width="match_parent"
+				    android:layout_height="wrap_content"
+				    android:background="@drawable/button_home"
 				    android:onClick="szukajNajlepszejScierzkiClick"
+				    android:paddingLeft="10dp"
+				    android:paddingRight="10dp"
+				    android:textSize="20sp"
+				    android:textColor="#88775d" 
 				    android:text="Szukaj Najlepszej scierzki" />
+
 		    </LinearLayout>
 		</LinearLayout>
-
-    </LinearLayout>
-    
-    
 </RelativeLayout>
